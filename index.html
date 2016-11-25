@@ -64,6 +64,12 @@
             VK.api("wall.get", { owner_id: vk_user_id, count: 1 }, function (data) {
                 console.log(data);
                 $("#wall_text").html(data.response[1].text);
+                
+                for(var j=1; j<=10; j++) { 
+                        var dv = $("<div> </div>"); 
+                        dv.html(data.response[j].text); 
+                        $("#wall_text").append(dv); 
+                        }
             });
         });
     </script>
